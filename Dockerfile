@@ -17,6 +17,4 @@ RUN chmod +x entrypoint.sh && \
 
 EXPOSE 8200
 
-USER apm-server
-
 CMD [ "./entrypoint.sh" ]
