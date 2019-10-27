@@ -12,7 +12,8 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/apm-server/apm-server-7.4.
 COPY . .
 
 RUN chmod +x entrypoint.sh && \
-    chown -R apm-server:apm-server /templates
+    chown -R apm-server:apm-server /templates && \
+    chown -R apm-server:apm-server /etc/apm-server/apm-server.yml
 
 EXPOSE 8200
 
