@@ -11,8 +11,11 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/apm-server/apm-server-7.4.
 
 COPY . .
 
-RUN chmod +x entrypoint.sh
+RUN chmod +x entrypoint.sh && \
+    chown -R apm-server:apm-server /templates
 
 EXPOSE 8200
+
+USER apm-server
 
 CMD [ "./entrypoint.sh" ]
